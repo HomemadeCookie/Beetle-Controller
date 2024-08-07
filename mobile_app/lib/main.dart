@@ -8,13 +8,21 @@ Future<void> sendPostRequest(String myString) async{
     'direction': myString,
   });
 
-  final headers = {'Content-Type': 'application/json'};
+  try {
+    final response = await http.post(
+      url,
+      headers: {'Content-Type': 'application/json'},
+      body: body,
+    );
 
-  final response = await http.post(
-    url,
-    body:body,
-    headers:headers,
-  );
+    if (response.statusCode == 200) {
+      print('POST request successful');
+    } else {
+      print('POST request failed with status code ${response.statusCode}');
+    }
+  } catch (e) {
+    print('Error sending POST request: $e');
+  }
 
 }
 
