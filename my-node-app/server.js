@@ -11,7 +11,11 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 app.get('/', (req, res) => {
     res.send('<h1>Hello, World!</h1>');
-  });
+});
+
+app.get('/command', (req, res) => {
+  res.send('Turn On');
+});
 
 app.post('/data', (req,res) => {
     console.log('Received POST request:', req);

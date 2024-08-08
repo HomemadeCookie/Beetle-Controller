@@ -31,7 +31,13 @@ void main() => runApp(
     home:Scaffold(
       appBar: AppBar(
         title: Center(
-          child: Text('Beetle Controller'),
+          child: Text(
+            'Beetle Controller',
+            style: const TextStyle(
+              color: Colors.black, // Customize text color
+              fontSize: 30,
+            ),
+          ),
         ),
         backgroundColor: Colors.blue[600],
       ),
@@ -42,21 +48,38 @@ void main() => runApp(
             mainAxisAlignment: MainAxisAlignment.center,
             children:[
               TextButton(
-                child: Text('<'),
-                onPressed: () {
-                  sendPostRequest('left');
-                },
-                style:ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+                child: Text(
+                  '<',
+                  style: const TextStyle(
+                    color: Colors.black, // Customize text color
+                    fontSize: 50,
+                  ),
                 ),
-              ),
-              TextButton(
-                child: Text('>'),
                 onPressed: () {
                   sendPostRequest('right');
                 },
-                style:ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+                style:TextButton.styleFrom(
+                  shape: const CircleBorder(),
+                  padding: const EdgeInsets.all(50),
+                  backgroundColor: Colors.blue,
+                ),
+              ),
+              SizedBox(width: 40.0), 
+              TextButton(
+                child: Text(
+                  '>',
+                  style: const TextStyle(
+                    color: Colors.black, // Customize text color
+                    fontSize: 50,
+                  ),
+                ),
+                onPressed: () {
+                  sendPostRequest('right');
+                },
+                style:TextButton.styleFrom(
+                  shape: const CircleBorder(),
+                  padding: const EdgeInsets.all(50),
+                  backgroundColor: Colors.blue,
                 ),
               ),
             ]
