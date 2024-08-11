@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const fs = require('fs');
 
 const app = express();
 const port = 3000;
@@ -23,6 +24,10 @@ app.post('/data', (req,res) => {
   // Access the request body specifically
   const receivedData = req.body;
   console.log('Request body:', receivedData); // Logs 'hello' in your example
+  fs.writeFile('output.txt', receivedData, (err) => {
+    if (err) throw err;
+    console.log('Data written to file\n');
+  })
 
   res.send('Data received'); 
 })
