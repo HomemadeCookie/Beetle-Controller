@@ -24,7 +24,8 @@ app.post('/data', (req,res) => {
   // Access the request body specifically
   const receivedData = req.body;
   console.log('Request body:', receivedData); // Logs 'hello' in your example
-  fs.writeFile('output.txt', receivedData, (err) => {
+  console.log('Type of receivedData is: ', typeof receivedData);
+  fs.writeFile('output.txt', JSON.stringify(receivedData), (err) => {
     if (err) throw err;
     console.log('Data written to file\n');
   })
