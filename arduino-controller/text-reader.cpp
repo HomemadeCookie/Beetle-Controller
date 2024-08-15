@@ -29,5 +29,11 @@ int main(){
     inputFile.close();
     outputFile.close();
 
+    ofstream out2("output.txt");
+
+    out2 << "Hello World" << endl;
+
+    out2.close();
+
     return 0;
 }

@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/command', (req, res) => {
-  res.send('Turn On');
+  res.json({message: 'Turn On'});
 });
 
 app.post('/data', (req,res) => {
