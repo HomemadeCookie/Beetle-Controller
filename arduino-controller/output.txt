@@ -1,1 +1,1 @@
-{"direction":"right"}
+{"direction":"left"}

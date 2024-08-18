@@ -5,7 +5,7 @@
 using namespace std;
 
 int main(){
-    string filename = "../my-node-app/output.txt";
+    string filename = "../shared/output.txt";
     ifstream inputFile(filename);
 
     if(!inputFile.is_open()){
@@ -29,11 +29,6 @@ int main(){
     inputFile.close();
     outputFile.close();
 
-    ofstream out2("output.txt");
-
-    out2 << "Hello World" << endl;
-
-    out2.close();
 
     return 0;
 }

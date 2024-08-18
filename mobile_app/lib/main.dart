@@ -56,7 +56,7 @@ void main() => runApp(
                   ),
                 ),
                 onPressed: () {
-                  sendPostRequest('right');
+                  sendPostRequest('left');
                 },
                 style:TextButton.styleFrom(
                   shape: const CircleBorder(),
